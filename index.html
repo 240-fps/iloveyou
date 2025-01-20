@@ -9,39 +9,30 @@
 <body>
   <header>
     <h1>Happy Valentine's Day!</h1>
-    <p>Celebrate love and joy!</p>
   </header>
 
   <!-- Slideshow Section -->
   <section id="slideshow">
     <div class="slideshow-container">
-      <div class="slide fade">
-        <img src="images/slide1.jpg" alt="Romantic Image 1">
-        <div class="caption">Love is in the air</div>
+      <div class="slide">
+        <img src="images/slide1.jpg" alt="Image 1">
       </div>
-      <div class="slide fade">
-        <img src="images/slide2.jpg" alt="Romantic Image 2">
-        <div class="caption">Cherish every moment</div>
+      <div class="slide">
+        <img src="images/slide2.jpg" alt="Image 2">
+      </div>
+      <div class="slide">
+        <img src="images/slide3.jpg" alt="Image 3">
       </div>
     </div>
     <div class="dots">
       <span class="dot" onclick="setCurrentSlide(1)"></span>
       <span class="dot" onclick="setCurrentSlide(2)"></span>
+      <span class="dot" onclick="setCurrentSlide(3)"></span>
     </div>
   </section>
 
-  <!-- Interactive Section -->
-  <section id="interactive">
-    <h2>What does love mean to you?</h2>
-    <form id="valentine-form">
-      <textarea placeholder="Write your answer here..." id="answer" required></textarea>
-      <button type="button" id="submit-btn">Submit</button>
-    </form>
-    <div id="response"></div>
-  </section>
-
   <footer>
-    <p>&copy; 2025 Valentine's Day Website | Made with ❤️</p>
+    <p>&copy; 2025 Valentine's Day Website</p>
   </footer>
 
   <script src="script.js"></script>
