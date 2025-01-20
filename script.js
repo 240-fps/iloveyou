@@ -1,28 +1,17 @@
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
+// Get the input and response elements
+const itineraryInput = document.getElementById('itinerary-text');
+const responseMessage = document.getElementById('response-message');
+const submitButton = document.getElementById('submit-btn');
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.style.opacity = i === index ? '1' : '0';
-  });
-}
-
-function startSlideshow() {
-  showSlide(currentSlide);
-  currentSlide = (currentSlide + 1) % slides.length;
-  setTimeout(startSlideshow, 5000);
-}
-
-startSlideshow();
-
-document.getElementById('submit-btn').addEventListener('click', () => {
-  const answer = document.getElementById('answer').value.trim();
-  const responseDiv = document.getElementById('response');
-
-  if (answer) {
-    responseDiv.innerHTML = `<p>Thank you for sharing! 💖 Your answer: "${answer}"</p>`;
-    document.getElementById('valentine-form').reset();
+// Add event listener for submit button
+submitButton.addEventListener('click', () => {
+  const message = itineraryInput.value.trim();
+  
+  if (message) {
+    responseMessage.innerHTML = `<p>Thank you, baby! Here’s what I have planned for us:</p><p>${message}</p>`;
+    itineraryInput.style.display = 'none';
+    submitButton.style.display = 'none';
   } else {
-    responseDiv.innerHTML = '<p>Please write something before submitting!</p>';
+    responseMessage.innerHTML = `<p>Please write something, my love! ❤️</p>`;
   }
 });

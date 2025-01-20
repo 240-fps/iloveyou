@@ -3,41 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valentine's Day Special</title>
+  <title>Happy Valentine's Day</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Celebrate Love</h1>
-      <p>Experience the magic of Valentine's Day with us.</p>
-      <a href="#interactive" class="cta-button">Share Your Love Story</a>
-    </div>
-  </header>
+  <!-- Landing Page -->
+  <div class="container">
+    <div class="content">
+      <h1>Happy Valentine's Day, my beautiful baby!</h1>
+      <p>Would you be my Valentine? ❤️</p>
+      
+      <!-- Custom Message Section -->
+      <div class="itinerary">
+        <textarea id="itinerary-text" placeholder="Write our itinerary here..."></textarea>
+        <button id="submit-btn">Share</button>
+      </div>
 
-  <section id="slideshow" class="slideshow">
-    <div class="slide">
-      <img src="images/slide1.jpg" alt="Romantic Image 1">
-      <div class="caption">Love is in the air</div>
+      <!-- Response Message -->
+      <div id="response-message"></div>
     </div>
-    <div class="slide">
-      <img src="images/slide2.jpg" alt="Romantic Image 2">
-      <div class="caption">Cherish every moment</div>
-    </div>
-  </section>
+  </div>
 
-  <section class="interactive">
-    <h2>What does love mean to you?</h2>
-    <form id="valentine-form">
-      <textarea placeholder="Write your answer here..." id="answer" required></textarea>
-      <button type="button" id="submit-btn" class="cta-button">Submit</button>
-    </form>
-    <div id="response"></div>
-  </section>
-
-  <footer class="footer">
-    <p>&copy; 2025 Valentine's Day Website | Designed with ❤️</p>
-  </footer>
+  <!-- Video Section -->
+  <div class="video-section">
+    <video controls autoplay loop>
+      <source src="video/valentines-message.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
   <script src="script.js"></script>
 </body>
