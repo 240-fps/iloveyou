@@ -5,21 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Valentine</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>Hello, my gorgeous girlfriend!</h1>
+    <h1>Hello, my gorgeous girlfriend</h1>
     <h2>Would you be my Valentine?</h2>
   </header>
 
+  <!-- Slideshow Section -->
+  <section id="slideshow">
+    <div class="slideshow-container">
+      <div class="slide">
+        <img src="images/slide1.jpg" alt="Memory 1">
+      </div>
+      <div class="slide">
+        <img src="images/slide2.jpg" alt="Memory 2">
+      </div>
+    </div>
+    <div class="dots">
+      <span class="dot" onclick="setCurrentSlide(1)"></span>
+      <span class="dot" onclick="setCurrentSlide(2)"></span>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section id="video">
+    <h3>Special Message for You:</h3>
+    <video controls>
+      <source src="video/love-message.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
   <!-- Itinerary Section -->
   <section id="itinerary">
-    <h3>Our Itinerary & Plans:</h3>
-    <p>
-      <strong>1. Romantic breakfast:</strong> We'll start the day with a cozy breakfast at your favorite café.<br>
-      <strong>2. A surprise activity:</strong> I have something fun planned for the afternoon!<br>
-      <strong>3. Dinner:</strong> We'll end the day with a candlelight dinner at [Your Restaurant Name].<br>
-    </p>
+    <h3>Our Plans:</h3>
+    <ul>
+      <li><strong>Romantic Breakfast:</strong> Enjoy a cozy start at your favorite café.</li>
+      <li><strong>A Surprise Activity:</strong> Something fun and memorable!</li>
+      <li><strong>Candlelight Dinner:</strong> End the day with elegance at [Restaurant Name].</li>
+    </ul>
     <h3>I love you so much!</h3>
   </section>
 
@@ -33,7 +59,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 A Special Valentine’s Day</p>
+    <p>&copy; 2025 My Valentine’s Day</p>
   </footer>
 
   <script src="script.js"></script>
