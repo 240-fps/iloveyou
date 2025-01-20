@@ -7,30 +7,50 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Landing Page -->
-  <div class="container">
-    <div class="content">
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
       <h1>Happy Valentine's Day, my beautiful baby!</h1>
       <p>Would you be my Valentine? ❤️</p>
-      
-      <!-- Custom Message Section -->
-      <div class="itinerary">
-        <textarea id="itinerary-text" placeholder="Write our itinerary here..."></textarea>
-        <button id="submit-btn">Share</button>
+      <div class="cta-buttons">
+        <button class="cta-button" id="yes-btn">Yes</button>
+        <button class="cta-button secondary" id="no-btn">No</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Slideshow Section -->
+  <section class="slideshow">
+    <div class="slideshow-container">
+      <!-- Slide 1 -->
+      <div class="slide">
+        <img src="images/image1.jpg" alt="Slide 1">
+        <div class="caption">Forever yours ❤️</div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide">
+        <img src="images/image2.jpg" alt="Slide 2">
+        <div class="caption">Our journey together 🌸</div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide">
+        <img src="images/image3.jpg" alt="Slide 3">
+        <div class="caption">My one and only 💕</div>
       </div>
 
-      <!-- Response Message -->
-      <div id="response-message"></div>
+      <!-- Navigation Dots -->
+      <div class="dots">
+        <span class="dot" onclick="showSlide(0)"></span>
+        <span class="dot" onclick="showSlide(1)"></span>
+        <span class="dot" onclick="showSlide(2)"></span>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Video Section -->
-  <div class="video-section">
-    <video controls autoplay loop>
-      <source src="video/valentines-message.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 | Designed with love for you 💖</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
