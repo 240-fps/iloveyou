@@ -3,63 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Valentine</title>
+  <title>Valentine's Day Special</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Hello, my gorgeous girlfriend</h1>
-    <h2>Would you be my Valentine?</h2>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Celebrate Love</h1>
+      <p>Experience the magic of Valentine's Day with us.</p>
+      <a href="#interactive" class="cta-button">Share Your Love Story</a>
+    </div>
   </header>
 
-  <!-- Slideshow Section -->
-  <section id="slideshow">
-    <div class="slideshow-container">
-      <div class="slide">
-        <img src="images/slide1.jpg" alt="Memory 1">
-      </div>
-      <div class="slide">
-        <img src="images/slide2.jpg" alt="Memory 2">
-      </div>
+  <section id="slideshow" class="slideshow">
+    <div class="slide">
+      <img src="images/slide1.jpg" alt="Romantic Image 1">
+      <div class="caption">Love is in the air</div>
     </div>
-    <div class="dots">
-      <span class="dot" onclick="setCurrentSlide(1)"></span>
-      <span class="dot" onclick="setCurrentSlide(2)"></span>
+    <div class="slide">
+      <img src="images/slide2.jpg" alt="Romantic Image 2">
+      <div class="caption">Cherish every moment</div>
     </div>
   </section>
 
-  <!-- Video Section -->
-  <section id="video">
-    <h3>Special Message for You:</h3>
-    <video controls>
-      <source src="video/love-message.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+  <section class="interactive">
+    <h2>What does love mean to you?</h2>
+    <form id="valentine-form">
+      <textarea placeholder="Write your answer here..." id="answer" required></textarea>
+      <button type="button" id="submit-btn" class="cta-button">Submit</button>
+    </form>
+    <div id="response"></div>
   </section>
 
-  <!-- Itinerary Section -->
-  <section id="itinerary">
-    <h3>Our Plans:</h3>
-    <ul>
-      <li><strong>Romantic Breakfast:</strong> Enjoy a cozy start at your favorite café.</li>
-      <li><strong>A Surprise Activity:</strong> Something fun and memorable!</li>
-      <li><strong>Candlelight Dinner:</strong> End the day with elegance at [Restaurant Name].</li>
-    </ul>
-    <h3>I love you so much!</h3>
-  </section>
-
-  <!-- Response Section -->
-  <section id="response-section">
-    <h3>Your Answer:</h3>
-    <p>Please write your response below and take a screenshot after sending it!</p>
-    <textarea id="response-box" placeholder="Write your message here..."></textarea>
-    <button id="send-btn">Send Your Answer</button>
-    <div id="response-display"></div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 My Valentine’s Day</p>
+  <footer class="footer">
+    <p>&copy; 2025 Valentine's Day Website | Designed with ❤️</p>
   </footer>
 
   <script src="script.js"></script>
