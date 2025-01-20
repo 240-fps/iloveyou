@@ -3,40 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valentine's Day Website</title>
+  <title>My Valentine</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>Happy Valentine's Day!</h1>
+    <h1>Hello, my gorgeous girlfriend!</h1>
+    <h2>Would you be my Valentine?</h2>
   </header>
 
-  <!-- Slideshow Section -->
-  <section id="slideshow">
-    <div class="slideshow-container">
-      <div class="slide">
-        <img src="images/slide1.jpg" alt="Image 1">
-      </div>
-      <div class="slide">
-        <img src="images/slide2.jpg" alt="Image 2">
-      </div>
-    </div>
-    <div class="dots">
-      <span class="dot" onclick="setCurrentSlide(1)"></span>
-      <span class="dot" onclick="setCurrentSlide(2)"></span>
-    </div>
+  <!-- Itinerary Section -->
+  <section id="itinerary">
+    <h3>Our Itinerary & Plans:</h3>
+    <p>
+      <strong>1. Romantic breakfast:</strong> We'll start the day with a cozy breakfast at your favorite café.<br>
+      <strong>2. A surprise activity:</strong> I have something fun planned for the afternoon!<br>
+      <strong>3. Dinner:</strong> We'll end the day with a candlelight dinner at [Your Restaurant Name].<br>
+    </p>
+    <h3>I love you so much!</h3>
   </section>
 
-  <!-- Yes/No Box Section -->
-  <section id="yes-no-box">
-    <h2>Do you love Valentine's Day?</h2>
-    <button id="yes-btn">Yes</button>
-    <button id="no-btn">No</button>
-    <p id="response"></p>
+  <!-- Response Section -->
+  <section id="response-section">
+    <h3>Your Answer:</h3>
+    <p>Please write your response below and take a screenshot after sending it!</p>
+    <textarea id="response-box" placeholder="Write your message here..."></textarea>
+    <button id="send-btn">Send Your Answer</button>
+    <div id="response-display"></div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Valentine's Day Website</p>
+    <p>&copy; 2025 A Special Valentine’s Day</p>
   </footer>
 
   <script src="script.js"></script>
