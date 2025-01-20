@@ -16,11 +16,13 @@
         <button class="cta-button" id="yes-btn">Yes</button>
         <button class="cta-button secondary" id="no-btn">No</button>
       </div>
+      <div id="response-message"></div>
     </div>
   </header>
 
   <!-- Slideshow Section -->
   <section class="slideshow">
+    <h2>Our Memories</h2>
     <div class="slideshow-container">
       <!-- Slide 1 -->
       <div class="slide">
@@ -37,14 +39,32 @@
         <img src="images/image3.jpg" alt="Slide 3">
         <div class="caption">My one and only 💕</div>
       </div>
-
-      <!-- Navigation Dots -->
-      <div class="dots">
-        <span class="dot" onclick="showSlide(0)"></span>
-        <span class="dot" onclick="showSlide(1)"></span>
-        <span class="dot" onclick="showSlide(2)"></span>
-      </div>
     </div>
+    <div class="dots">
+      <span class="dot" onclick="showSlide(0)"></span>
+      <span class="dot" onclick="showSlide(1)"></span>
+      <span class="dot" onclick="showSlide(2)"></span>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="video-section">
+    <h2>A Special Message</h2>
+    <video controls autoplay loop>
+      <source src="video/valentines-message.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- Itinerary Section -->
+  <section class="itinerary">
+    <h2>Our Valentine’s Day Itinerary</h2>
+    <ul>
+      <li><strong>9:00 AM:</strong> Breakfast at our favorite café.</li>
+      <li><strong>11:00 AM:</strong> A romantic walk in the park.</li>
+      <li><strong>2:00 PM:</strong> Lunch at the bistro.</li>
+      <li><strong>6:00 PM:</strong> Candlelight dinner together.</li>
+    </ul>
   </section>
 
   <!-- Footer -->

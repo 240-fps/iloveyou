@@ -16,54 +16,17 @@ function showSlide(index) {
 // Initialize slideshow
 showSlide(0);
 
-// Heart Celebration
-const yesButton = document.getElementById('yes-btn');
-const noButton = document.getElementById('no-btn');
+// Yes/No Button Logic
+document.getElementById('yes-btn').addEventListener('click', () => {
+  const hearts = document.createElement('div');
+  hearts.className = 'heart-animation';
+  document.body.appendChild(hearts);
 
-yesButton.addEventListener('click', () => {
-  createHeartCelebration();
+  setTimeout(() => {
+    hearts.remove();
+  }, 3000);
 });
 
-noButton.addEventListener('click', () => {
-  alert("Oh no! But I'll still love you! ❤️");
+document.getElementById('no-btn').addEventListener('click', () => {
+  document.getElementById('response-message').innerText = "Oh no! But I'll still love you forever. ❤️";
 });
-
-function createHeartCelebration() {
-  const body = document.body;
-  for (let i = 0; i < 50; i++) {
-    const heart = document.createElement('div');
-    heart.className = 'heart';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-    body.appendChild(heart);
-
-    setTimeout(() => {
-      heart.remove();
-    }, 5000);
-  }
-}
-
-// Add heart celebration styles
-const style = document.createElement('style');
-style.innerHTML = `
-  .heart {
-    position: fixed;
-    bottom: 0;
-    width: 20px;
-    height: 20px;
-    background: pink;
-    opacity: 0.8;
-    border-radius: 50%;
-    animation: float 5s linear infinite;
-  }
-  
-  @keyframes float {
-    0% {
-      transform: translateY(0) scale(1);
-    }
-    100% {
-      transform: translateY(-100vh) scale(0.5);
-    }
-  }
-`;
-document.head.appendChild(style);

@@ -13,7 +13,7 @@ body, html {
 /* Hero Section */
 .hero {
   padding: 50px 20px;
-  background: rgba(255, 192, 203, 0.8); /* Pink overlay */
+  background: rgba(255, 192, 203, 0.8);
   margin-bottom: 20px;
 }
 
@@ -96,4 +96,33 @@ body, html {
 
 .dot.active {
   background-color: #ff69b4;
+}
+
+/* Video Section */
+.video-section {
+  margin-top: 20px;
+}
+
+video {
+  width: 80%;
+  border-radius: 15px;
+}
+
+/* Itinerary Section */
+.itinerary {
+  background: rgba(255, 182, 193, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.itinerary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.itinerary li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
