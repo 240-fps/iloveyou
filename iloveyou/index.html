@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day Special</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Happy Valentine's Day!</h1>
+    <p>Celebrate love and joy!</p>
+  </header>
+
+  <!-- Slideshow Section -->
+  <section id="slideshow">
+    <div class="slideshow-container">
+      <div class="slide fade">
+        <img src="images/slide1.jpg" alt="Romantic Image 1">
+        <div class="caption">Love is in the air</div>
+      </div>
+      <div class="slide fade">
+        <img src="images/slide2.jpg" alt="Romantic Image 2">
+        <div class="caption">Cherish every moment</div>
+      </div>
+      <div class="slide fade">
+        <img src="images/slide3.jpg" alt="Romantic Image 3">
+        <div class="caption">Forever together</div>
+      </div>
+    </div>
+    <div class="dots">
+      <span class="dot" onclick="setCurrentSlide(1)"></span>
+      <span class="dot" onclick="setCurrentSlide(2)"></span>
+      <span class="dot" onclick="setCurrentSlide(3)"></span>
+    </div>
+  </section>
+
+  <!-- Interactive Section -->
+  <section id="interactive">
+    <h2>What does love mean to you?</h2>
+    <form id="valentine-form">
+      <textarea placeholder="Write your answer here..." id="answer" required></textarea>
+      <button type="button" id="submit-btn">Submit</button>
+    </form>
+    <div id="response"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Valentine's Day Website | Made with ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
