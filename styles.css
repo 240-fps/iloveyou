@@ -2,48 +2,65 @@
 body, html {
   margin: 0;
   padding: 0;
+  font-family: 'Georgia', serif;
+  color: #fff;
+  background: #f8c8dc;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* Animated Hearts */
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  font-family: 'Arial', sans-serif;
-  background: url('images/background.jpg') no-repeat center center/cover;
-  color: #fff;
-  text-align: center;
+  pointer-events: none;
+  z-index: -1;
+  background-image: url('images/hearts.png');
+  background-size: contain;
+  animation: floatHearts 10s infinite linear;
+}
+
+@keyframes floatHearts {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
 }
 
 /* Hero Section */
 .hero {
-  padding: 50px 20px;
-  background: rgba(255, 192, 203, 0.8);
-  margin-bottom: 20px;
+  padding: 60px 20px;
+  background: linear-gradient(rgba(255, 105, 180, 0.8), rgba(255, 182, 193, 0.8));
 }
 
-.hero-content h1 {
-  font-size: 2.5rem;
+.hero h1 {
+  font-size: 3rem;
   margin-bottom: 10px;
 }
 
-.hero-content p {
-  font-size: 1.2rem;
+.hero p {
+  font-size: 1.5rem;
   margin-bottom: 20px;
-}
-
-.cta-buttons {
-  margin-top: 20px;
 }
 
 .cta-button {
   background: #ff69b4;
-  color: white;
+  color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 15px 25px;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 50px;
+  margin: 10px;
   cursor: pointer;
-  margin: 5px;
 }
 
 .cta-button.secondary {
-  background: #f8d7da;
+  background: #ffccd5;
   color: #333;
 }
 
@@ -51,12 +68,12 @@ body, html {
   background: #ff85c1;
 }
 
-/* Slideshow */
+/* Slideshow Section */
 .slideshow-container {
   position: relative;
-  max-width: 80%;
   margin: auto;
   overflow: hidden;
+  max-width: 90%;
 }
 
 .slide {
@@ -73,8 +90,8 @@ body, html {
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
 }
@@ -87,42 +104,29 @@ body, html {
 .dot {
   height: 15px;
   width: 15px;
-  margin: 0 5px;
-  background-color: #bbb;
+  background: #bbb;
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
 }
 
 .dot.active {
-  background-color: #ff69b4;
-}
-
-/* Video Section */
-.video-section {
-  margin-top: 20px;
-}
-
-video {
-  width: 80%;
-  border-radius: 15px;
+  background: #ff69b4;
 }
 
 /* Itinerary Section */
 .itinerary {
-  background: rgba(255, 182, 193, 0.8);
   padding: 20px;
+  background: rgba(255, 192, 203, 0.8);
   border-radius: 10px;
   margin: 20px auto;
-  width: 80%;
+  max-width: 800px;
 }
 
-.itinerary ul {
-  list-style: none;
-  padding: 0;
-}
-
-.itinerary li {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+.itinerary-card {
+  background: #fff;
+  color: #333;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
 }

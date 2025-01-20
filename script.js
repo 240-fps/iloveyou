@@ -16,17 +16,27 @@ function showSlide(index) {
 // Initialize slideshow
 showSlide(0);
 
-// Yes/No Button Logic
+// Buttons
 document.getElementById('yes-btn').addEventListener('click', () => {
-  const hearts = document.createElement('div');
-  hearts.className = 'heart-animation';
-  document.body.appendChild(hearts);
+  // Heart animation
+  for (let i = 0; i < 30; i++) {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+    document.body.appendChild(heart);
 
-  setTimeout(() => {
-    hearts.remove();
-  }, 3000);
+    setTimeout(() => {
+      heart.remove();
+    }, 5000); // Remove heart after 5 seconds
+  }
+
+  // Update response message
+  const responseMessage = document.getElementById('response-message');
+  responseMessage.textContent = 'Yay! You said Yes! ❤️';
 });
 
 document.getElementById('no-btn').addEventListener('click', () => {
-  document.getElementById('response-message').innerText = "Oh no! But I'll still love you forever. ❤️";
+  const responseMessage = document.getElementById('response-message');
+  responseMessage.textContent = "Oh no! But I still love you! 💕";
 });
