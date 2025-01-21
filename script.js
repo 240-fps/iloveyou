@@ -33,7 +33,7 @@ document.addEventListener('touchend', (e) => {
   if (startX - endX < -50) goToPage(currentPage - 1);
 });
 
-// Itinerary Cards
+// Itinerary Toggle Logic
 function toggleCard(selectedCard) {
   const cards = document.querySelectorAll('.itinerary-card');
   cards.forEach((card) => {
