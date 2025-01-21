@@ -3,8 +3,9 @@ let currentPage = 0;
 
 function goToPage(index) {
   if (index >= 0 && index < pages.length) {
-    pages[currentPage].classList.remove('active');
-    pages[index].classList.add('active');
+    pages.forEach((page, i) => {
+      page.style.transform = `translateX(${(i - index) * 100}vw)`;
+    });
     currentPage = index;
     updateDots();
   }
@@ -12,8 +13,8 @@ function goToPage(index) {
 
 function updateDots() {
   const dots = document.querySelectorAll('.navigation-dots .dot');
-  dots.forEach((dot, index) => {
-    dot.classList.toggle('active', index === currentPage);
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentPage);
   });
 }
 
@@ -29,11 +30,11 @@ document.addEventListener('touchstart', (e) => {
 
 document.addEventListener('touchend', (e) => {
   const endX = e.changedTouches[0].clientX;
-  if (startX - endX > 50) goToPage(currentPage + 1);
-  if (startX - endX < -50) goToPage(currentPage - 1);
+  if (startX - endX > 50) goToPage(currentPage + 1); // Swipe Left
+  if (startX - endX < -50) goToPage(currentPage - 1); // Swipe Right
 });
 
-// Itinerary Toggle Logic
+// Itinerary Cards
 function toggleCard(selectedCard) {
   const cards = document.querySelectorAll('.itinerary-card');
   cards.forEach((card) => {
