@@ -48,43 +48,25 @@ body, html {
   background: linear-gradient(rgba(255, 105, 180, 0.8), rgba(255, 182, 193, 0.8));
 }
 
-/* Navigation Dots */
-.navigation-dots {
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  z-index: 100;
-}
-
-.navigation-dots .dot {
-  height: 15px;
-  width: 15px;
-  background: #bbb;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.navigation-dots .dot.active {
-  background: #ff69b4;
-}
-
-/* Hidden Message Section */
+/* Hidden Message */
 .hidden-message {
-  margin: 20px 0;
+  position: relative;
+  margin: 30px auto;
+  text-align: center;
 }
 
 #note-popup {
   display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: #fff;
   color: #333;
-  max-width: 500px;
-  margin: 20px auto;
   padding: 20px;
   border-radius: 10px;
-  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
 /* Itinerary Section */

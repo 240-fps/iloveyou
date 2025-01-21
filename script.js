@@ -7,54 +7,51 @@ function goToPage(index) {
     pages[currentPage].classList.remove('active');
     pages[index].classList.add('active');
     currentPage = index;
-    updateDots();
   }
 }
 
 document.getElementById('yes-btn-1').addEventListener('click', () => goToPage(1));
 document.getElementById('yes-btn-2').addEventListener('click', () => goToPage(1));
-document.getElementById('next-to-itinerary').addEventListener('click', () => goToPage(2));
+
+// Slideshow Logic
+function showSlide(index) {
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  slides.forEach((slide, i) => {
+    slide.style.display = i === index ? 'block' : 'none';
+  });
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+showSlide(0);
+
+// Secret Message Logic
+const notePopup = document.getElementById('note-popup');
+document.getElementById('reveal-btn').addEventListener('click', () => {
+  notePopup.style.display = 'block';
+});
+notePopup.addEventListener('click', () => {
+  notePopup.style.display = 'none';
+});
 
 // Swipe Navigation
 let startX = 0;
-
 document.addEventListener('touchstart', (event) => {
   startX = event.touches[0].clientX;
 });
-
 document.addEventListener('touchend', (event) => {
   const endX = event.changedTouches[0].clientX;
   const diffX = startX - endX;
 
   if (diffX > 50) {
-    // Swipe left
-    goToPage(currentPage + 1);
+    goToPage(currentPage + 1); // Swipe left
   } else if (diffX < -50) {
-    // Swipe right
-    goToPage(currentPage - 1);
+    goToPage(currentPage - 1); // Swipe right
   }
 });
 
-// Navigation Dots
-function updateDots() {
-  const dots = document.querySelectorAll('.navigation-dots .dot');
-  dots.forEach((dot, index) => {
-    dot.classList.toggle('active', index === currentPage);
-  });
-}
-
-updateDots();
-
-// Secret Message Logic
-document.getElementById('reveal-btn').addEventListener('click', () => {
-  document.getElementById('note-popup').style.display = 'block';
-});
-
-document.getElementById('close-btn').addEventListener('click', () => {
-  document.getElementById('note-popup').style.display = 'none';
-});
-
-// Itinerary Logic
+// Itinerary Cards Logic
 function toggleCard(selectedCard) {
   const cards = document.querySelectorAll('.itinerary-card');
   cards.forEach((card) => {
