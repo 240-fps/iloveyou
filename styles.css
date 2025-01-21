@@ -2,25 +2,30 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Georgia', serif;
+  font-family: 'Helvetica Neue', sans-serif;
   color: #fff;
   background: linear-gradient(to bottom, #ff69b4, #ff85c1);
   overflow-x: hidden;
   text-align: center;
 }
 
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Navigation Dots */
 .navigation-dots {
   position: fixed;
-  bottom: 10px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
 }
 
 .navigation-dots .dot {
-  height: 15px;
-  width: 15px;
+  height: 12px;
+  width: 12px;
   background: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -40,20 +45,17 @@ body, html {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to bottom, #ff69b4, #ff85c1);
 }
 
 .hero-image {
   max-width: 80%;
-  height: auto;
   margin-bottom: 20px;
   border-radius: 20px;
 }
 
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 10px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero-question {
@@ -72,16 +74,14 @@ body, html {
   padding: 15px 25px;
   border: none;
   border-radius: 50px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button.secondary {
   background: linear-gradient(to right, #ffd1dc, #ffa6b1);
-  color: #fff;
 }
 
 .cta-button.pulse {
@@ -90,17 +90,55 @@ body, html {
 
 .cta-button:hover {
   transform: scale(1.1);
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 @keyframes pulse {
-  0% {
+  0%, 100% {
     transform: scale(1);
   }
   50% {
     transform: scale(1.05);
   }
-  100% {
-    transform: scale(1);
-  }
+}
+
+/* Itinerary Section */
+.itinerary {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  max-width: 90%;
+  margin: auto;
+}
+
+.itinerary-card {
+  background: linear-gradient(to bottom, #ffd1dc, #ffa6b1);
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.itinerary-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.itinerary-card h3 {
+  margin: 0;
+}
+
+.itinerary-card .details {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.3s ease;
+}
+
+.itinerary-card.expanded .details {
+  max-height: 150px;
+  opacity: 1;
 }
