@@ -1,49 +1,60 @@
-// Page Navigation Logic
+// Page Navigation
 const pages = document.querySelectorAll('.page');
 let currentPage = 0;
 
-function goToPage(pageIndex) {
-  pages[currentPage].classList.remove('active');
-  pages[pageIndex].classList.add('active');
-  currentPage = pageIndex;
+function goToPage(index) {
+  if (index >= 0 && index < pages.length) {
+    pages[currentPage].classList.remove('active');
+    pages[index].classList.add('active');
+    currentPage = index;
+    updateDots();
+  }
 }
 
-// Initialize with Page 1
-goToPage(0);
+document.getElementById('yes-btn-1').addEventListener('click', () => goToPage(1));
+document.getElementById('yes-btn-2').addEventListener('click', () => goToPage(1));
+document.getElementById('next-to-itinerary').addEventListener('click', () => goToPage(2));
 
-// Yes Buttons Logic
-document.getElementById('yes-btn-1').addEventListener('click', () => {
-  goToPage(1); // Go to Slideshow Page
+// Swipe Navigation
+let startX = 0;
+
+document.addEventListener('touchstart', (event) => {
+  startX = event.touches[0].clientX;
 });
 
-document.getElementById('yes-btn-2').addEventListener('click', () => {
-  goToPage(1); // Go to Slideshow Page
+document.addEventListener('touchend', (event) => {
+  const endX = event.changedTouches[0].clientX;
+  const diffX = startX - endX;
+
+  if (diffX > 50) {
+    // Swipe left
+    goToPage(currentPage + 1);
+  } else if (diffX < -50) {
+    // Swipe right
+    goToPage(currentPage - 1);
+  }
 });
 
-// Slideshow Next Button
-document.getElementById('next-to-video').addEventListener('click', () => {
-  goToPage(2); // Go to Video Page
-});
-
-// Video Next Button
-document.getElementById('next-to-itinerary').addEventListener('click', () => {
-  goToPage(3); // Go to Itinerary Page
-});
-
-// Slideshow Logic
-function showSlide(index) {
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.dot');
-  slides.forEach((slide, i) => {
-    slide.style.display = i === index ? 'block' : 'none';
-  });
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === index);
+// Navigation Dots
+function updateDots() {
+  const dots = document.querySelectorAll('.navigation-dots .dot');
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentPage);
   });
 }
-showSlide(0);
 
-// Itinerary Cards Logic
+updateDots();
+
+// Secret Message Logic
+document.getElementById('reveal-btn').addEventListener('click', () => {
+  document.getElementById('note-popup').style.display = 'block';
+});
+
+document.getElementById('close-btn').addEventListener('click', () => {
+  document.getElementById('note-popup').style.display = 'none';
+});
+
+// Itinerary Logic
 function toggleCard(selectedCard) {
   const cards = document.querySelectorAll('.itinerary-card');
   cards.forEach((card) => {

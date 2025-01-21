@@ -48,95 +48,48 @@ body, html {
   background: linear-gradient(rgba(255, 105, 180, 0.8), rgba(255, 182, 193, 0.8));
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+/* Navigation Dots */
+.navigation-dots {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 100;
 }
 
-.hero p {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
-
-.cta-button {
-  background: #ff69b4;
-  color: #fff;
-  border: none;
-  padding: 15px 25px;
-  font-size: 1rem;
-  border-radius: 50px;
-  margin: 10px;
+.navigation-dots .dot {
+  height: 15px;
+  width: 15px;
+  background: #bbb;
+  border-radius: 50%;
   cursor: pointer;
 }
 
-.cta-button.secondary {
-  background: #ffccd5;
-  color: #333;
+.navigation-dots .dot.active {
+  background: #ff69b4;
 }
 
-.cta-button:hover {
-  background: #ff85c1;
+/* Hidden Message Section */
+.hidden-message {
+  margin: 20px 0;
 }
 
-/* Slideshow Section */
-.slideshow-container {
-  position: relative;
-  margin: auto;
-  overflow: hidden;
-  max-width: 90%;
-}
-
-.slide {
+#note-popup {
   display: none;
-}
-
-.slide img {
-  width: 100%;
+  background: #fff;
+  color: #333;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
   border-radius: 10px;
+  text-align: center;
 }
 
 /* Itinerary Section */
 .itinerary {
   padding: 20px;
   background: rgba(255, 192, 203, 0.8);
-  border-radius: 10px;
   margin: 20px auto;
-  max-width: 800px;
-}
-
-.itinerary-card {
-  background: #fff;
-  color: #333;
-  margin: 10px 0;
-  border-radius: 5px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: max-height 0.5s ease, transform 0.3s ease, opacity 0.3s ease;
-  max-height: 60px;
-  opacity: 1;
-}
-
-.itinerary-card:hover {
-  transform: scale(1.02);
-}
-
-.itinerary-card.expanded {
-  max-height: 250px;
-  transform: scale(1.05);
-}
-
-.itinerary-card h3 {
-  margin: 10px;
-  font-size: 1.5rem;
-}
-
-.itinerary-card .details {
-  padding: 10px 15px;
-  font-size: 1rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.itinerary-card.expanded .details {
-  opacity: 1;
 }
