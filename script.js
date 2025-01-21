@@ -14,20 +14,17 @@ function goToPage(index) {
 document.getElementById('yes-btn-1').addEventListener('click', () => goToPage(1));
 document.getElementById('yes-btn-2').addEventListener('click', () => goToPage(1));
 
-// Slideshow Logic
-function showSlide(index) {
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.dots .dot');
-  slides.forEach((slide, i) => {
-    slide.style.display = i === index ? 'block' : 'none';
-  });
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === index);
+// Navigation Dots
+function updateDots() {
+  const dots = document.querySelectorAll('.navigation-dots .dot');
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentPage);
   });
 }
-showSlide(0);
 
-// Itinerary Logic
+updateDots();
+
+// Itinerary Cards
 function toggleCard(selectedCard) {
   const cards = document.querySelectorAll('.itinerary-card');
   cards.forEach((card) => {
@@ -39,12 +36,8 @@ function toggleCard(selectedCard) {
   });
 }
 
-// Navigation Dots
-function updateDots() {
-  const dots = document.querySelectorAll('.navigation-dots .dot');
-  dots.forEach((dot, index) => {
-    dot.classList.toggle('active', index === currentPage);
-  });
-}
-
-updateDots();
+// Secret Message
+document.getElementById('reveal-btn').addEventListener('click', () => {
+  const notePopup = document.getElementById('note-popup');
+  notePopup.classList.toggle('hidden');
+});
