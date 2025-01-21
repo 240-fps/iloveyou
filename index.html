@@ -10,21 +10,23 @@
   <!-- Animated Heart Background -->
   <div class="hearts"></div>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>A message to my beautiful baby!</h1>
-      <p>Will you be my Valentine? ❤️</p>
-      <div class="cta-buttons">
-        <button class="cta-button" id="yes-btn-1">Yes</button>
-        <button class="cta-button secondary" id="yes-btn-2">Yes</button>
+  <!-- Page 1: Hero Section -->
+  <section id="page-1" class="page active">
+    <header class="hero">
+      <div class="hero-content">
+        <h1>A message to my beautiful baby!</h1>
+        <p>Will you be my Valentine? ❤️</p>
+        <div class="cta-buttons">
+          <button class="cta-button" id="yes-btn-1">Yes</button>
+          <button class="cta-button secondary" id="yes-btn-2">Yes</button>
+        </div>
+        <div id="response-message"></div>
       </div>
-      <div id="response-message"></div>
-    </div>
-  </header>
+    </header>
+  </section>
 
-  <!-- Slideshow Section -->
-  <section class="slideshow">
+  <!-- Page 2: Slideshow Section -->
+  <section id="page-2" class="page">
     <h2>Since You Said Yes:</h2>
     <div class="slideshow-container">
       <div class="slide">
@@ -45,10 +47,21 @@
       <span class="dot" onclick="showSlide(1)"></span>
       <span class="dot" onclick="showSlide(2)"></span>
     </div>
+    <button class="next-button" id="next-to-video">Next</button>
   </section>
 
-  <!-- Itinerary Section -->
-  <section class="itinerary">
+  <!-- Page 3: Video Section -->
+  <section id="page-3" class="page">
+    <h2>A Special Message</h2>
+    <video controls autoplay loop>
+      <source src="video/valentines-message.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button class="next-button" id="next-to-itinerary">Next</button>
+  </section>
+
+  <!-- Page 4: Itinerary Section -->
+  <section id="page-4" class="page">
     <h2>Your Valentine’s Visit</h2>
     <div class="itinerary-card" onclick="toggleCard(this)">
       <h3>Feb 14</h3>
@@ -87,30 +100,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Hidden Message Section -->
-  <section class="hidden-message">
-    <button id="reveal-btn">Click here for a surprise message 💌</button>
-    <div id="note-popup" class="hidden">
-      <p>To my beautiful baby,</p>
-      <p>I love you more than words can say. You make every moment special, and I can’t wait to spend this Valentine’s Day with you. ❤️</p>
-      <button id="close-btn">Close</button>
-    </div>
-  </section>
-
-  <!-- Video Section -->
-  <section class="video-section">
-    <h2>A Special Message</h2>
-    <video controls autoplay loop>
-      <source src="video/valentines-message.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>my bubblekong 💖</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>

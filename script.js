@@ -1,45 +1,49 @@
-// Slideshow Logic
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
+// Page Navigation Logic
+const pages = document.querySelectorAll('.page');
+let currentPage = 0;
 
+function goToPage(pageIndex) {
+  pages[currentPage].classList.remove('active');
+  pages[pageIndex].classList.add('active');
+  currentPage = pageIndex;
+}
+
+// Initialize with Page 1
+goToPage(0);
+
+// Yes Buttons Logic
+document.getElementById('yes-btn-1').addEventListener('click', () => {
+  goToPage(1); // Go to Slideshow Page
+});
+
+document.getElementById('yes-btn-2').addEventListener('click', () => {
+  goToPage(1); // Go to Slideshow Page
+});
+
+// Slideshow Next Button
+document.getElementById('next-to-video').addEventListener('click', () => {
+  goToPage(2); // Go to Video Page
+});
+
+// Video Next Button
+document.getElementById('next-to-itinerary').addEventListener('click', () => {
+  goToPage(3); // Go to Itinerary Page
+});
+
+// Slideshow Logic
 function showSlide(index) {
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
   slides.forEach((slide, i) => {
     slide.style.display = i === index ? 'block' : 'none';
   });
   dots.forEach((dot, i) => {
     dot.classList.toggle('active', i === index);
   });
-  currentSlide = index;
 }
-
-// Initialize slideshow
 showSlide(0);
 
-// Yes Buttons Logic
-document.getElementById('yes-btn-1').addEventListener('click', () => {
-  for (let i = 0; i < 30; i++) {
-    const heart = document.createElement('div');
-    heart.className = 'heart';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-      heart.remove();
-    }, 5000);
-  }
-
-  const responseMessage = document.getElementById('response-message');
-  responseMessage.textContent = 'Yay! You said Yes! ❤️';
-});
-
-document.getElementById('yes-btn-2').addEventListener('click', () => {
-  const responseMessage = document.getElementById('response-message');
-  responseMessage.textContent = "Of course, you said Yes! 💕 I'm so happy!";
-});
-
-// Toggle Itinerary Cards
+// Itinerary Cards Logic
 function toggleCard(selectedCard) {
   const cards = document.querySelectorAll('.itinerary-card');
   cards.forEach((card) => {
@@ -50,16 +54,3 @@ function toggleCard(selectedCard) {
     }
   });
 }
-
-// Hidden Message Logic
-const revealBtn = document.getElementById('reveal-btn');
-const notePopup = document.getElementById('note-popup');
-const closeBtn = document.getElementById('close-btn');
-
-revealBtn.addEventListener('click', () => {
-  notePopup.style.display = 'block'; // Show the note popup
-});
-
-closeBtn.addEventListener('click', () => {
-  notePopup.style.display = 'none'; // Hide the note popup
-});
