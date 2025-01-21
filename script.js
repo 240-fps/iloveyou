@@ -16,7 +16,7 @@ function showSlide(index) {
 // Initialize slideshow
 showSlide(0);
 
-// Button 1 Logic
+// Yes Buttons Logic
 document.getElementById('yes-btn-1').addEventListener('click', () => {
   // Heart animation
   for (let i = 0; i < 30; i++) {
@@ -36,8 +36,19 @@ document.getElementById('yes-btn-1').addEventListener('click', () => {
   responseMessage.textContent = 'Yay! You said Yes! ❤️';
 });
 
-// Button 2 Logic
 document.getElementById('yes-btn-2').addEventListener('click', () => {
   const responseMessage = document.getElementById('response-message');
   responseMessage.textContent = "Of course, you said Yes! 💕 I'm so happy!";
 });
+
+// Toggle Itinerary Cards
+function toggleCard(selectedCard) {
+  const cards = document.querySelectorAll('.itinerary-card');
+  cards.forEach((card) => {
+    if (card === selectedCard) {
+      card.classList.toggle('expanded');
+    } else {
+      card.classList.remove('expanded');
+    }
+  });
+}
