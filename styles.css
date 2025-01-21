@@ -4,7 +4,7 @@ body, html {
   padding: 0;
   font-family: 'Georgia', serif;
   color: #fff;
-  background: #f8c8dc;
+  background: linear-gradient(to bottom, #f8c8dc, #f2a7c2);
   overflow-x: hidden;
   text-align: center;
 }
@@ -26,7 +26,7 @@ body, html {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  text-align: center;
+  background: linear-gradient(to bottom, #ff69b4, #ff85c1);
 }
 
 .hero-title {
@@ -40,7 +40,7 @@ body, html {
 }
 
 .cta-button {
-  background: #ff69b4;
+  background: linear-gradient(to right, #ff69b4, #ff85c1);
   color: #fff;
   padding: 15px 25px;
   border: none;
@@ -51,37 +51,13 @@ body, html {
 }
 
 .cta-button.secondary {
-  background: #ffccd5;
+  background: linear-gradient(to right, #ffccd5, #ffa6b1);
   color: #333;
 }
 
 .cta-button:hover {
   transform: scale(1.05);
-  background: #ff85c1;
-}
-
-/* Slideshow Section */
-.slideshow-container {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.caption {
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 10px;
+  background: linear-gradient(to right, #ff85c1, #ff9eb7);
 }
 
 /* Itinerary Section */

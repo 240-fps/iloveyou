@@ -14,6 +14,23 @@ function goToPage(index) {
 document.getElementById('yes-btn-1').addEventListener('click', () => goToPage(1));
 document.getElementById('yes-btn-2').addEventListener('click', () => goToPage(1));
 
+// Swipe Navigation
+let startX = 0;
+document.addEventListener('touchstart', (event) => {
+  startX = event.touches[0].clientX;
+});
+
+document.addEventListener('touchend', (event) => {
+  const endX = event.changedTouches[0].clientX;
+  const diffX = startX - endX;
+
+  if (diffX > 50) {
+    goToPage(currentPage + 1); // Swipe left
+  } else if (diffX < -50) {
+    goToPage(currentPage - 1); // Swipe right
+  }
+});
+
 // Navigation Dots
 function updateDots() {
   const dots = document.querySelectorAll('.navigation-dots .dot');
@@ -23,6 +40,12 @@ function updateDots() {
 }
 
 updateDots();
+
+// Secret Message
+document.getElementById('reveal-btn').addEventListener('click', () => {
+  const notePopup = document.getElementById('note-popup');
+  notePopup.classList.toggle('hidden');
+});
 
 // Itinerary Cards
 function toggleCard(selectedCard) {
@@ -35,9 +58,3 @@ function toggleCard(selectedCard) {
     }
   });
 }
-
-// Secret Message
-document.getElementById('reveal-btn').addEventListener('click', () => {
-  const notePopup = document.getElementById('note-popup');
-  notePopup.classList.toggle('hidden');
-});
