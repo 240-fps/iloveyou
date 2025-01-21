@@ -18,7 +18,6 @@ showSlide(0);
 
 // Yes Buttons Logic
 document.getElementById('yes-btn-1').addEventListener('click', () => {
-  // Heart animation
   for (let i = 0; i < 30; i++) {
     const heart = document.createElement('div');
     heart.className = 'heart';
@@ -28,10 +27,9 @@ document.getElementById('yes-btn-1').addEventListener('click', () => {
 
     setTimeout(() => {
       heart.remove();
-    }, 5000); // Remove heart after 5 seconds
+    }, 5000);
   }
 
-  // Update response message
   const responseMessage = document.getElementById('response-message');
   responseMessage.textContent = 'Yay! You said Yes! ❤️';
 });

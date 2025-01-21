@@ -9,6 +9,29 @@ body, html {
   text-align: center;
 }
 
+/* Animated Hearts */
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background-image: url('images/hearts.png');
+  background-size: contain;
+  animation: floatHearts 10s infinite linear;
+}
+
+@keyframes floatHearts {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
 /* Hero Section */
 .hero {
   padding: 60px 20px;
@@ -73,24 +96,6 @@ body, html {
   border-radius: 5px;
 }
 
-.dots {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.dot {
-  height: 15px;
-  width: 15px;
-  background: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.dot.active {
-  background: #ff69b4;
-}
-
 /* Itinerary Section */
 .itinerary {
   padding: 20px;
@@ -107,9 +112,9 @@ body, html {
   border-radius: 5px;
   overflow: hidden;
   cursor: pointer;
-  transition: max-height 0.3s ease, transform 0.3s ease;
+  transition: max-height 0.5s ease, transform 0.3s ease, opacity 0.3s ease;
   max-height: 60px; /* Collapsed height */
-  transform: scale(1); /* Default scale */
+  opacity: 1; /* Fully visible */
 }
 
 .itinerary-card:hover {
@@ -117,7 +122,7 @@ body, html {
 }
 
 .itinerary-card.expanded {
-  max-height: 200px; /* Expanded height */
+  max-height: 250px; /* Expanded height */
   transform: scale(1.05); /* Pop-out effect */
 }
 
@@ -129,32 +134,10 @@ body, html {
 .itinerary-card .details {
   padding: 10px 15px;
   font-size: 1rem;
-  display: none; /* Hidden by default */
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Smooth fade-in effect */
 }
 
 .itinerary-card.expanded .details {
-  display: block; /* Show details when expanded */
-}
-
-/* Animated Hearts */
-.hearts {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-  background-image: url('images/hearts.png');
-  background-size: contain;
-  animation: floatHearts 10s infinite linear;
-}
-
-@keyframes floatHearts {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(-100%);
-  }
+  opacity: 1; /* Fully visible when expanded */
 }
