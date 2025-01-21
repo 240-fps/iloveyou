@@ -14,40 +14,37 @@ function goToPage(index) {
 document.getElementById('yes-btn-1').addEventListener('click', () => goToPage(1));
 document.getElementById('yes-btn-2').addEventListener('click', () => goToPage(1));
 
-// Swipe Navigation
-let startX = 0;
-document.addEventListener('touchstart', (event) => {
-  startX = event.touches[0].clientX;
-});
+// Slideshow Logic
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.slideshow-dots .dot');
 
-document.addEventListener('touchend', (event) => {
-  const endX = event.changedTouches[0].clientX;
-  const diffX = startX - endX;
-
-  if (diffX > 50) {
-    goToPage(currentPage + 1); // Swipe left
-  } else if (diffX < -50) {
-    goToPage(currentPage - 1); // Swipe right
-  }
-});
-
-// Navigation Dots
-function updateDots() {
-  const dots = document.querySelectorAll('.navigation-dots .dot');
-  dots.forEach((dot, index) => {
-    dot.classList.toggle('active', index === currentPage);
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
   });
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+  currentSlideIndex = index;
 }
 
-updateDots();
+showSlide(0);
 
-// Secret Message
+// Secret Message Logic
+const revealButton = document.getElementById('reveal-btn');
 const notePopup = document.getElementById('note-popup');
-document.getElementById('reveal-btn').addEventListener('click', () => {
-  notePopup.style.display = notePopup.style.display === 'block' ? 'none' : 'block';
+
+revealButton.addEventListener('click', (event) => {
+  notePopup.classList.toggle('hidden');
+  event.stopPropagation(); // Prevent closing on button click
 });
 
-// Itinerary Cards
+document.addEventListener('click', () => {
+  notePopup.classList.add('hidden');
+});
+
+// Itinerary Card Logic
 function toggleCard(selectedCard) {
   const cards = document.querySelectorAll('.itinerary-card');
   cards.forEach((card) => {
