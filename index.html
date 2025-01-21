@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Valentine's Day</title>
+  <title>Valentine's Day Special</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,33 +18,34 @@
     <span class="dot" onclick="goToPage(3)"></span>
   </div>
 
-  <!-- Page 1: Welcome Section -->
+  <!-- Page 1: Welcome -->
   <section id="page-1" class="page active">
-    <div class="welcome-container">
-      <h1>Welcome to Our Special Day</h1>
-      <p>Will you be my Valentine? ❤️</p>
+    <header class="hero">
+      <h1 class="hero-title">To my beautiful Valentine ❤️</h1>
+      <p class="hero-subtitle">Will you be mine forever?</p>
+      <img src="images/hero.jpg" alt="Hero Image" class="hero-image">
       <div class="cta-buttons">
         <button class="cta-button" id="yes-btn-1">Yes</button>
         <button class="cta-button secondary" id="yes-btn-2">Yes</button>
       </div>
-    </div>
+    </header>
   </section>
 
-  <!-- Page 2: Memories Section -->
+  <!-- Page 2: Memories Slideshow -->
   <section id="page-2" class="page">
     <h2>Our Precious Memories</h2>
     <div class="slideshow-container">
       <div class="slide active">
         <img src="images/memory1.jpg" alt="Memory 1">
-        <div class="caption">The day I fell for you ❤️</div>
+        <div class="caption">Our happiest day together ❤️</div>
       </div>
       <div class="slide">
         <img src="images/memory2.jpg" alt="Memory 2">
-        <div class="caption">Our happiest moment 🌸</div>
+        <div class="caption">Forever my favorite moment 💕</div>
       </div>
       <div class="slide">
         <img src="images/memory3.jpg" alt="Memory 3">
-        <div class="caption">Forever my favorite 💕</div>
+        <div class="caption">Always laughing with you 🌸</div>
       </div>
     </div>
     <div class="slideshow-dots">
@@ -54,19 +55,26 @@
     </div>
   </section>
 
-  <!-- Page 3: Gallery & Countdown -->
+  <!-- Page 3: Photo Gallery -->
   <section id="page-3" class="page">
-    <h2>Countdown to Our Special Day</h2>
-    <div class="countdown">
-      <p>Just <span id="days">00</span> days, <span id="hours">00</span> hours, <span id="minutes">00</span> minutes, and <span id="seconds">00</span> seconds left!</p>
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+      <img src="images/gallery1.jpg" alt="Gallery 1" class="gallery-item">
+      <img src="images/gallery2.jpg" alt="Gallery 2" class="gallery-item">
+      <img src="images/gallery3.jpg" alt="Gallery 3" class="gallery-item">
+    </div>
+    <h2>Love Notes</h2>
+    <div class="love-notes">
+      <p>"You light up my world like nobody else."</p>
+      <p>"Every day with you is Valentine's Day."</p>
+      <p>"I love you more than words can express."</p>
     </div>
   </section>
 
-  <!-- Page 4: Itinerary Section -->
+  <!-- Page 4: Itinerary -->
   <section id="page-4" class="page">
     <h2>Our Valentine’s Itinerary</h2>
     <div class="itinerary">
-      <!-- Itinerary Cards -->
       <div class="itinerary-card" onclick="toggleCard(this)">
         <h3>Feb 14</h3>
         <div class="details">
@@ -76,35 +84,40 @@
       <div class="itinerary-card" onclick="toggleCard(this)">
         <h3>Feb 15</h3>
         <div class="details">
-          <p>Exploring a new adventure together 🌸</p>
+          <p>A day of adventure exploring new places 🌸</p>
         </div>
       </div>
       <div class="itinerary-card" onclick="toggleCard(this)">
         <h3>Feb 16</h3>
         <div class="details">
-          <p>A getaway for just us 💕</p>
+          <p>A cozy getaway just for us 💕</p>
         </div>
       </div>
       <div class="itinerary-card" onclick="toggleCard(this)">
         <h3>Feb 17</h3>
         <div class="details">
-          <p>A fun-filled day of surprises 💖</p>
+          <p>A day of surprises and fun 💖</p>
         </div>
       </div>
       <div class="itinerary-card" onclick="toggleCard(this)">
         <h3>Feb 18</h3>
         <div class="details">
-          <p>Your birthday celebration with love and joy 🎂</p>
+          <p>Celebrating your birthday with love and joy 🎂</p>
         </div>
       </div>
       <div class="itinerary-card" onclick="toggleCard(this)">
         <h3>Feb 19</h3>
         <div class="details">
-          <p>Reflecting on our time together 💌</p>
+          <p>A reflective moment to cherish our time 💌</p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Designed with ❤️ for my one and only</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

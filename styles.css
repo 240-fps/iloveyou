@@ -1,13 +1,15 @@
-/* General */
+/* Body and General Styles */
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Georgia', serif;
+  font-family: 'Helvetica Neue', sans-serif;
   background: linear-gradient(to bottom, #ff69b4, #ff85c1);
   overflow: hidden;
   text-align: center;
+  color: #fff;
 }
 
+/* Floating Hearts */
 .floating-hearts {
   position: fixed;
   top: 0;
@@ -16,7 +18,7 @@ body, html {
   height: 100%;
   pointer-events: none;
   background: url('images/heart.svg') repeat;
-  animation: floatHearts 12s linear infinite;
+  animation: floatHearts 10s linear infinite;
 }
 
 @keyframes floatHearts {
@@ -28,47 +30,107 @@ body, html {
   }
 }
 
-/* Pages */
-.page {
-  width: 100vw;
+/* Navigation Dots */
+.navigation-dots {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+.navigation-dots .dot {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 0 5px;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.navigation-dots .dot.active {
+  background: #ff69b4;
+}
+
+/* Hero Section */
+.hero {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  left: 100vw;
-  transition: transform 0.5s ease-in-out;
 }
 
-.page.active {
-  left: 0;
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-/* Itinerary Cards */
-.itinerary-card {
-  background: #fff;
-  color: #333;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 10px auto;
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-image {
   width: 80%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.cta-button {
+  background: linear-gradient(to right, #ff69b4, #ff85c1);
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button.secondary {
+  background: linear-gradient(to right, #ffa6c9, #ff85c1);
+}
+
+/* Slideshow */
+.slideshow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.gallery-item {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.itinerary-card:hover {
-  transform: scale(1.05);
-}
-
-.details {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.3s ease;
-}
-
-.itinerary-card.expanded .details {
-  max-height: 150px;
-  opacity: 1;
 }

@@ -1,4 +1,3 @@
-// Page Navigation
 const pages = document.querySelectorAll('.page');
 let currentPage = 0;
 
@@ -31,8 +30,8 @@ document.addEventListener('touchstart', (e) => {
 
 document.addEventListener('touchend', (e) => {
   const endX = e.changedTouches[0].clientX;
-  if (startX - endX > 50) goToPage(currentPage + 1); // Swipe left
-  if (startX - endX < -50) goToPage(currentPage - 1); // Swipe right
+  if (startX - endX > 50) goToPage(currentPage + 1);
+  if (startX - endX < -50) goToPage(currentPage - 1);
 });
 
 // Itinerary Cards
