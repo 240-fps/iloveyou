@@ -7,44 +7,43 @@ function goToPage(index) {
     pages[currentPage].classList.remove('active');
     pages[index].classList.add('active');
     currentPage = index;
-    updateDots();
   }
 }
 
 document.getElementById('yes-btn-1').addEventListener('click', () => goToPage(1));
 document.getElementById('yes-btn-2').addEventListener('click', () => goToPage(1));
 
-// Slideshow Logic
-let currentSlideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.slideshow-dots .dot');
+// Swipe Navigation
+let startX = 0;
+document.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+});
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
-  });
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === index);
-  });
-  currentSlideIndex = index;
-}
+document.addEventListener('touchend', (e) => {
+  const endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) {
+    goToPage(currentPage + 1);
+  } else if (startX - endX < -50) {
+    goToPage(currentPage - 1);
+  }
+});
 
-showSlide(0);
-
-// Secret Message Logic
+// Secret Message
 const revealButton = document.getElementById('reveal-btn');
 const notePopup = document.getElementById('note-popup');
 
-revealButton.addEventListener('click', (event) => {
+revealButton.addEventListener('click', (e) => {
   notePopup.classList.toggle('hidden');
-  event.stopPropagation(); // Prevent closing on button click
+  e.stopPropagation();
 });
 
-document.addEventListener('click', () => {
-  notePopup.classList.add('hidden');
+document.addEventListener('click', (e) => {
+  if (!notePopup.contains(e.target) && !revealButton.contains(e.target)) {
+    notePopup.classList.add('hidden');
+  }
 });
 
-// Itinerary Card Logic
+// Itinerary Logic
 function toggleCard(selectedCard) {
   const cards = document.querySelectorAll('.itinerary-card');
   cards.forEach((card) => {
