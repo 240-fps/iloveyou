@@ -7,6 +7,7 @@ function goToPage(index) {
     pages[currentPage].classList.remove('active');
     pages[index].classList.add('active');
     currentPage = index;
+    updateDots();
   }
 }
 
@@ -25,21 +26,6 @@ document.addEventListener('touchend', (e) => {
     goToPage(currentPage + 1);
   } else if (startX - endX < -50) {
     goToPage(currentPage - 1);
-  }
-});
-
-// Secret Message
-const revealButton = document.getElementById('reveal-btn');
-const notePopup = document.getElementById('note-popup');
-
-revealButton.addEventListener('click', (e) => {
-  notePopup.classList.toggle('hidden');
-  e.stopPropagation();
-});
-
-document.addEventListener('click', (e) => {
-  if (!notePopup.contains(e.target) && !revealButton.contains(e.target)) {
-    notePopup.classList.add('hidden');
   }
 });
 
