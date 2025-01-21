@@ -85,17 +85,6 @@ body, html {
   border-radius: 10px;
 }
 
-.caption {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-
 /* Itinerary Section */
 .itinerary {
   padding: 20px;
@@ -140,4 +129,63 @@ body, html {
 
 .itinerary-card.expanded .details {
   opacity: 1; /* Fully visible when expanded */
+}
+
+/* Hidden Message Section */
+.hidden-message {
+  margin: 30px auto;
+  text-align: center;
+}
+
+#reveal-btn {
+  background: #ff69b4;
+  color: white;
+  padding: 15px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#reveal-btn:hover {
+  transform: scale(1.05);
+  background: #ff85c1;
+}
+
+/* Note Popup */
+#note-popup {
+  display: none; /* Hidden by default */
+  background: #fff;
+  color: #333;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+#note-popup p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+#close-btn {
+  background: #ff69b4;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+#close-btn:hover {
+  transform: scale(1.05);
+  background: #ff85c1;
 }

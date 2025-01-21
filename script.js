@@ -50,3 +50,16 @@ function toggleCard(selectedCard) {
     }
   });
 }
+
+// Hidden Message Logic
+const revealBtn = document.getElementById('reveal-btn');
+const notePopup = document.getElementById('note-popup');
+const closeBtn = document.getElementById('close-btn');
+
+revealBtn.addEventListener('click', () => {
+  notePopup.style.display = 'block'; // Show the note popup
+});
+
+closeBtn.addEventListener('click', () => {
+  notePopup.style.display = 'none'; // Hide the note popup
+});
