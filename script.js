@@ -42,9 +42,9 @@ function updateDots() {
 updateDots();
 
 // Secret Message
+const notePopup = document.getElementById('note-popup');
 document.getElementById('reveal-btn').addEventListener('click', () => {
-  const notePopup = document.getElementById('note-popup');
-  notePopup.classList.toggle('hidden');
+  notePopup.style.display = notePopup.style.display === 'block' ? 'none' : 'block';
 });
 
 // Itinerary Cards

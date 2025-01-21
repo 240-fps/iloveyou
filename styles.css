@@ -29,6 +29,12 @@ body, html {
   background: linear-gradient(to bottom, #ff69b4, #ff85c1);
 }
 
+.hero-image {
+  max-width: 80%;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
 .hero-title {
   font-size: 2.5rem;
   margin-bottom: 10px;
@@ -40,49 +46,41 @@ body, html {
 }
 
 .cta-button {
-  background: linear-gradient(to right, #ff69b4, #ff85c1);
-  color: #fff;
+  background: #ffffff;
+  color: #ff69b4;
   padding: 15px 25px;
   border: none;
   border-radius: 50px;
   margin: 10px;
+  font-weight: bold;
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 .cta-button.secondary {
-  background: linear-gradient(to right, #ffccd5, #ffa6b1);
+  background: #ffd1dc;
   color: #333;
 }
 
 .cta-button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(to right, #ff85c1, #ff9eb7);
+  transform: scale(1.1);
+  background: #ff85c1;
 }
 
-/* Itinerary Section */
-.itinerary {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+/* Secret Message */
+.hidden-message {
+  position: relative;
+  margin: 20px auto;
 }
 
-.itinerary-card {
+#note-popup {
+  display: none;
   background: #fff;
   color: #333;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
   border-radius: 10px;
-  padding: 15px;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.itinerary-card .details {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.itinerary-card.expanded .details {
-  max-height: 150px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
