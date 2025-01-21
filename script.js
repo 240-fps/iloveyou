@@ -38,5 +38,5 @@ document.getElementById('yes-btn').addEventListener('click', () => {
 
 document.getElementById('no-btn').addEventListener('click', () => {
   const responseMessage = document.getElementById('response-message');
-  responseMessage.textContent = "You dont have a choice💕";
+  responseMessage.textContent = "Wow you said Yes!💕";
 });
