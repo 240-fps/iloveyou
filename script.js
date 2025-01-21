@@ -1,3 +1,4 @@
+// Page Navigation
 const pages = document.querySelectorAll('.page');
 let currentPage = 0;
 
@@ -30,18 +31,18 @@ document.addEventListener('touchstart', (e) => {
 
 document.addEventListener('touchend', (e) => {
   const endX = e.changedTouches[0].clientX;
-  if (startX - endX > 50) goToPage(currentPage + 1); // Swipe Left
-  if (startX - endX < -50) goToPage(currentPage - 1); // Swipe Right
+  if (startX - endX > 50) goToPage(currentPage + 1); // Swipe left
+  if (startX - endX < -50) goToPage(currentPage - 1); // Swipe right
 });
 
 // Itinerary Cards
-function toggleCard(selectedCard) {
+function toggleCard(card) {
   const cards = document.querySelectorAll('.itinerary-card');
-  cards.forEach((card) => {
-    if (card === selectedCard) {
-      card.classList.toggle('expanded');
+  cards.forEach((c) => {
+    if (c === card) {
+      c.classList.toggle('expanded');
     } else {
-      card.classList.remove('expanded');
+      c.classList.remove('expanded');
     }
   });
 }
