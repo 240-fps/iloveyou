@@ -16,8 +16,8 @@ function showSlide(index) {
 // Initialize slideshow
 showSlide(0);
 
-// Buttons
-document.getElementById('yes-btn').addEventListener('click', () => {
+// Button 1 Logic
+document.getElementById('yes-btn-1').addEventListener('click', () => {
   // Heart animation
   for (let i = 0; i < 30; i++) {
     const heart = document.createElement('div');
@@ -36,7 +36,8 @@ document.getElementById('yes-btn').addEventListener('click', () => {
   responseMessage.textContent = 'Yay! You said Yes! ❤️';
 });
 
-document.getElementById('no-btn').addEventListener('click', () => {
+// Button 2 Logic
+document.getElementById('yes-btn-2').addEventListener('click', () => {
   const responseMessage = document.getElementById('response-message');
-  responseMessage.textContent = "Wow! You said Yes!💕";
+  responseMessage.textContent = "Of course, you said Yes! 💕 I'm so happy!";
 });
