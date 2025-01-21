@@ -10,6 +10,13 @@
   <!-- Animated Heart Background -->
   <div class="hearts"></div>
 
+  <!-- Navigation Dots -->
+  <div class="navigation-dots">
+    <span class="dot" onclick="goToPage(0)"></span>
+    <span class="dot" onclick="goToPage(1)"></span>
+    <span class="dot" onclick="goToPage(2)"></span>
+  </div>
+
   <!-- Page 1: Hero Section -->
   <section id="page-1" class="page active">
     <header class="hero">
@@ -24,7 +31,7 @@
     </header>
   </section>
 
-  <!-- Page 2: Slideshow, Secret Message -->
+  <!-- Page 2: Slideshow, Secret Message, and Video -->
   <section id="page-2" class="page">
     <h2>Since You Said Yes:</h2>
     <div class="slideshow-container">
@@ -55,45 +62,56 @@
         <p>I love you more than words can say. You make every moment special, and I can’t wait to spend this Valentine’s Day with you. ❤️</p>
       </div>
     </div>
+
+    <!-- Video Section -->
+    <div class="video-section">
+      <h2>A Special Message</h2>
+      <video controls autoplay loop>
+        <source src="video/valentines-message.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </section>
 
   <!-- Page 3: Itinerary Section -->
   <section id="page-3" class="page">
     <h2>Your Valentine’s Visit</h2>
-    <div class="itinerary-card" onclick="toggleCard(this)">
-      <h3>Feb 14</h3>
-      <div class="details">
-        <p>Celebrate the start of Valentine’s week with a sweet surprise!</p>
+    <div class="itinerary">
+      <div class="itinerary-card" onclick="toggleCard(this)">
+        <h3>Feb 14</h3>
+        <div class="details">
+          <p>Celebrate the start of Valentine’s week with a sweet surprise!</p>
+        </div>
       </div>
-    </div>
-    <div class="itinerary-card" onclick="toggleCard(this)">
-      <h3>Feb 15</h3>
-      <div class="details">
-        <p>A romantic dinner to start the night!</p>
+      <div class="itinerary-card" onclick="toggleCard(this)">
+        <h3>Feb 15</h3>
+        <div class="details">
+          <p>A romantic dinner to start the night!</p>
+        </div>
       </div>
-    </div>
-    <div class="itinerary-card" onclick="toggleCard(this)">
-      <h3>Feb 16</h3>
-      <div class="details">
-        <p>A surprise getaway destination revealed!</p>
+      <div class="itinerary-card" onclick="toggleCard(this)">
+        <h3>Feb 16</h3>
+        <div class="details">
+          <p>A surprise getaway destination revealed!</p>
+        </div>
       </div>
-    </div>
-    <div class="itinerary-card" onclick="toggleCard(this)">
-      <h3>Feb 17</h3>
-      <div class="details">
-        <p>A day of relaxation and spa together.</p>
+      <div class="itinerary-card" onclick="toggleCard(this)">
+        <h3>Feb 17</h3>
+        <div class="details">
+          <p>A day of relaxation and spa together.</p>
+        </div>
       </div>
-    </div>
-    <div class="itinerary-card" onclick="toggleCard(this)">
-      <h3>Feb 18</h3>
-      <div class="details">
-        <p>Celebrate your birthday with love and joy! 🎂</p>
+      <div class="itinerary-card" onclick="toggleCard(this)">
+        <h3>Feb 18</h3>
+        <div class="details">
+          <p>Celebrate your birthday with love and joy! 🎂</p>
+        </div>
       </div>
-    </div>
-    <div class="itinerary-card" onclick="toggleCard(this)">
-      <h3>Feb 19</h3>
-      <div class="details">
-        <p>A beautiful farewell brunch to cherish our moments together.</p>
+      <div class="itinerary-card" onclick="toggleCard(this)">
+        <h3>Feb 19</h3>
+        <div class="details">
+          <p>A beautiful farewell brunch to cherish our moments together.</p>
+        </div>
       </div>
     </div>
   </section>

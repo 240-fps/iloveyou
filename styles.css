@@ -48,30 +48,73 @@ body, html {
   background: linear-gradient(rgba(255, 105, 180, 0.8), rgba(255, 182, 193, 0.8));
 }
 
-/* Hidden Message */
-.hidden-message {
-  position: relative;
-  margin: 30px auto;
-  text-align: center;
+.cta-button {
+  background: #ff69b4;
+  color: #fff;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 50px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-#note-popup {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
+.cta-button.secondary {
+  background: #ffccd5;
   color: #333;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  background: #ff85c1;
+}
+
+/* Navigation Dots */
+.navigation-dots {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+}
+
+.navigation-dots .dot {
+  height: 15px;
+  width: 15px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.navigation-dots .dot.active {
+  background: #ff69b4;
 }
 
 /* Itinerary Section */
 .itinerary {
-  padding: 20px;
-  background: rgba(255, 192, 203, 0.8);
-  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.itinerary-card {
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.itinerary-card .details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.itinerary-card.expanded .details {
+  max-height: 200px;
 }
